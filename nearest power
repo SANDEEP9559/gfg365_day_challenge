@@ -1,0 +1,14 @@
+def nearestPower(self, n, m):
+       # code here
+       if(n==m):
+           return 1
+       
+       thres = log(n)//log(m)
+       res1 = abs(n - (m**thres))
+       res2 = abs(n - (m**(thres+1)))
+       if(res1 == res2):
+           return int(m**(thres+1))
+       elif(res1>res2):
+           return int(m**(thres+1))
+       else:
+           return int(m**thres)
